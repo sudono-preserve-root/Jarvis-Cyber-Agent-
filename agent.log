@@ -1,0 +1,178 @@
+2025-12-25 20:52:41,856 - [INFO] - BOOT: Initializing modules...
+2025-12-25 20:52:41,857 - [CRITICAL] - BOOT FAILURE: name 'os' is not defined
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 123, in __enter__
+    self.modules['firewall'] = Firewall(dry_run=self.config['firewall']['dry_run'])
+                               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\cyberagent\Firewall.py", line 11, in __init__
+    self._load_current_ip()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\projects\cyberagent\Firewall.py", line 15, in _load_current_ip
+    ssh_source = os.getenv('SSH_CONNECTION', '').split('')[0]
+                 ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+2025-12-25 20:55:18,813 - [INFO] - BOOT: Initializing modules...
+2025-12-25 20:55:18,814 - [CRITICAL] - BOOT FAILURE: name 'os' is not defined
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 123, in __enter__
+    self.modules['firewall'] = Firewall(dry_run=self.config['firewall']['dry_run'])
+                               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\cyberagent\Firewall.py", line 11, in __init__
+    self._load_current_ip()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\projects\cyberagent\Firewall.py", line 15, in _load_current_ip
+    ssh_source = os.getenv('SSH_CONNECTION', '').split('')[0]
+                 ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+2025-12-25 20:57:04,032 - [INFO] - BOOT: Initializing modules...
+2025-12-25 20:57:04,034 - [CRITICAL] - BOOT FAILURE: name 'os' is not defined
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 123, in __enter__
+    self.modules['firewall'] = Firewall(dry_run=self.config['firewall']['dry_run'])
+                               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\cyberagent\Firewall.py", line 11, in __init__
+    self._load_current_ip()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\projects\cyberagent\Firewall.py", line 15, in _load_current_ip
+    ssh_source = os.getenv('SSH_CONNECTION', '').split('')[0]
+                 ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+2025-12-25 20:57:40,630 - [INFO] - BOOT: Initializing modules...
+2025-12-25 20:57:40,633 - [CRITICAL] - BOOT FAILURE: name 'os' is not defined
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 123, in __enter__
+    self.modules['firewall'] = Firewall(dry_run=self.config['firewall']['dry_run'])
+                               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\projects\cyberagent\Firewall.py", line 11, in __init__
+    self._load_current_ip()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\projects\cyberagent\Firewall.py", line 15, in _load_current_ip
+    ssh_source = os.getenv('SSH_CONNECTION', '').split('')[0]
+                 ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'?
+2025-12-25 20:59:43,473 - [INFO] - BOOT: Initializing modules...
+2025-12-25 20:59:43,846 - [CRITICAL] - BOOT FAILURE: Detector.__init__() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 125, in __enter__
+    self.modules['detector'] = Detector(self.config['detector'])
+                               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Detector.__init__() takes 1 positional argument but 2 were given
+2025-12-25 21:01:08,324 - [INFO] - BOOT: Initializing modules...
+2025-12-25 21:01:08,504 - [INFO] - Detector initialized (Sensitivity: high)
+2025-12-25 21:01:08,505 - [CRITICAL] - BOOT FAILURE: Honeypot.__init__() got an unexpected keyword argument 'bind_port'
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 131, in __enter__
+    self.modules['honeypot'] = Honeypot(bind_port=hp_port)
+                               ~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: Honeypot.__init__() got an unexpected keyword argument 'bind_port'
+2025-12-25 21:03:34,137 - [INFO] - BOOT: Initializing modules...
+2025-12-25 21:03:34,378 - [INFO] - Detector initialized (Sensitivity: high)
+2025-12-25 21:03:34,380 - [INFO] - MODULE: Honeypot bound to 8080
+2025-12-25 21:03:34,381 - [INFO] - Listener active on 0.0.0.0:8080
+2025-12-25 21:03:34,409 - [INFO] - {"ts": "2025-12-26T02:03:34.409525+00:00", "event": "STARTUP_VALIDATION", "data": {"status": "commencing"}}
+2025-12-25 21:03:34,410 - [INFO] - {"ts": "2025-12-26T02:03:34.410203+00:00", "event": "INSUFFICIENT_PRIVILEGES", "data": {"required": "root"}}
+2025-12-25 21:03:34,410 - [CRITICAL] - BOOT FAILURE: Orchestrator requires root for firewall enforcement.
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 140, in __enter__
+    self.agent = Orchestrator(self.modules)
+                 ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\projects\cyberagent\Core.py", line 37, in __init__
+    self._validate_startup()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\projects\cyberagent\Core.py", line 45, in _validate_startup
+    raise PermissionError("Orchestrator requires root for firewall enforcement.")
+PermissionError: Orchestrator requires root for firewall enforcement.
+2025-12-25 21:04:31,793 - [INFO] - BOOT: Initializing modules...
+2025-12-25 21:04:31,876 - [INFO] - Detector initialized (Sensitivity: high)
+2025-12-25 21:04:31,888 - [INFO] - MODULE: Honeypot bound to 8080
+2025-12-25 21:04:31,890 - [INFO] - Listener active on 0.0.0.0:8080
+2025-12-25 21:04:31,892 - [CRITICAL] - BOOT FAILURE: Orchestrator requires elevated privileges (Run as Admin/Root).
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 140, in __enter__
+    self.agent = Orchestrator(self.modules)
+                 ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\projects\cyberagent\Core.py", line 19, in __init__
+    self._validate_startup()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\projects\cyberagent\Core.py", line 34, in _validate_startup
+    raise PermissionError("Orchestrator requires elevated privileges (Run as Admin/Root).")
+PermissionError: Orchestrator requires elevated privileges (Run as Admin/Root).
+2025-12-25 21:06:41,178 - [INFO] - BOOT: Initializing modules...
+2025-12-25 21:06:41,506 - [INFO] - Detector initialized (Sensitivity: high)
+2025-12-25 21:06:41,507 - [INFO] - MODULE: Honeypot bound to 8080
+2025-12-25 21:06:41,509 - [INFO] - Listener active on 0.0.0.0:8080
+2025-12-25 21:06:41,510 - [INFO] - CORE: Startup validation passed.
+2025-12-25 21:06:41,511 - [INFO] - SYSTEM: Active Defense Online.
+2025-12-25 21:06:41,512 - [INFO] - CORE: Orchestrator loop started.
+2025-12-25 21:07:42,596 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:24326
+2025-12-25 21:07:42,652 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:60789
+2025-12-25 21:07:42,840 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:14498
+2025-12-25 21:07:43,978 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:51561
+2025-12-25 21:07:44,001 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:10100
+2025-12-25 21:07:44,235 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:51814
+2025-12-25 21:07:45,309 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:19287
+2025-12-25 21:07:45,341 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:59553
+2025-12-25 21:07:45,576 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:43173
+2025-12-25 21:07:46,635 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:32407
+2025-12-25 21:07:46,665 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:33744
+2025-12-25 21:07:46,893 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:19289
+2025-12-25 21:07:47,956 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:3278
+2025-12-25 21:07:47,987 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:3971
+2025-12-25 21:07:48,221 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:18157
+2025-12-25 21:07:49,298 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:58432
+2025-12-25 21:07:49,320 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:28345
+2025-12-25 21:07:49,562 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:33582
+2025-12-25 21:07:54,634 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:23199
+2025-12-25 21:07:54,664 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:52426
+2025-12-25 21:07:54,899 - [WARNING] - INTRUSION DETECTED: Connection from 127.0.0.1:28947
+2025-12-25 21:10:57,638 - [INFO] - SYSTEM: Signal 2 received.
+2025-12-25 21:10:57,641 - [INFO] - SHUTDOWN: Halting modules...
+2025-12-25 21:10:57,642 - [INFO] - SHUTDOWN: Complete.
+2025-12-25 21:11:02,722 - [INFO] - BOOT: Initializing modules...
+2025-12-25 21:11:02,887 - [INFO] - DETECTOR: Downloading Threat Intelligence feeds...
+2025-12-25 21:11:02,888 - [INFO] - MODULE: Honeypot bound to 8080
+2025-12-25 21:11:02,891 - [INFO] - Listener active on 0.0.0.0:8080
+2025-12-25 21:11:02,894 - [INFO] - CORE: Startup validation passed.
+2025-12-25 21:11:02,895 - [INFO] - SYSTEM: Active Defense Online.
+2025-12-25 21:11:02,896 - [INFO] - CORE: Orchestrator loop started.
+2025-12-25 21:11:04,804 - [INFO] - DETECTOR: Intelligence updated. 1280 known threats tracked.
+2025-12-25 21:20:32,505 - [INFO] - BOOT: Initializing modules...
+2025-12-25 21:20:32,893 - [INFO] - DETECTOR: Downloading Threat Intelligence feeds...
+2025-12-25 21:20:32,894 - [INFO] - MODULE: Honeypot bound to 8080
+2025-12-25 21:20:32,896 - [INFO] - Listener active on 0.0.0.0:8080
+2025-12-25 21:20:32,898 - [CRITICAL] - BOOT FAILURE: Orchestrator requires elevated privileges (Run as Admin/Root).
+Traceback (most recent call last):
+  File "D:\projects\cyberagent\main.py", line 140, in __enter__
+    self.agent = Orchestrator(self.modules)
+                 ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\projects\cyberagent\Core.py", line 19, in __init__
+    self._validate_startup()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\projects\cyberagent\Core.py", line 34, in _validate_startup
+    raise PermissionError("Orchestrator requires elevated privileges (Run as Admin/Root).")
+PermissionError: Orchestrator requires elevated privileges (Run as Admin/Root).
+2025-12-25 21:22:51,618 - [INFO] - SYSTEM: Signal 2 received.
+2025-12-25 21:22:51,618 - [INFO] - SHUTDOWN: Halting modules...
+2025-12-25 21:22:51,619 - [INFO] - SHUTDOWN: Complete.
+2025-12-25 21:22:54,357 - [INFO] - BOOT: Initializing modules...
+2025-12-25 21:22:54,556 - [INFO] - DETECTOR: Downloading Threat Intelligence feeds...
+2025-12-25 21:22:54,557 - [INFO] - MODULE: Honeypot bound to 8080
+2025-12-25 21:22:54,561 - [INFO] - Listener active on 0.0.0.0:8080
+2025-12-25 21:22:54,562 - [INFO] - CORE: Startup validation passed.
+2025-12-25 21:22:54,594 - [CRITICAL] - BOOT FAILURE: 'NetMonitor' object has no attribute 'start'
+Traceback (most recent call last):
+  File "D:\Projects\CyberAgent\main.py", line 140, in __enter__
+    self.agent = Orchestrator(self.modules)
+                 ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\Projects\CyberAgent\Core.py", line 22, in __init__
+    self.monitor.start()
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NetMonitor' object has no attribute 'start'
+2025-12-25 21:28:59,696 - [INFO] - BOOT: Initializing modules...
+2025-12-25 21:28:59,698 - [INFO] - DETECTOR: Downloading Threat Intelligence feeds...
+2025-12-25 21:28:59,698 - [INFO] - MODULE: Honeypot bound to 8080
+2025-12-25 21:28:59,700 - [INFO] - Listener active on 0.0.0.0:8080
+2025-12-25 21:28:59,702 - [INFO] - CORE: Startup validation passed.
+2025-12-25 21:28:59,702 - [INFO] - SYSTEM: Active Defense Online.
+2025-12-25 21:28:59,703 - [INFO] - CORE: Orchestrator loop started.
+2025-12-25 21:29:00,449 - [INFO] - DETECTOR: Intelligence updated. 1280 known threats tracked.
